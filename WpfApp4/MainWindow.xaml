@@ -24,6 +24,17 @@
     </StackPanel>
 
     <!--  中央: メモエリア -->
+    <Grid Margin="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Label Grid.Row="0" Content="メモ内容:" />
+      <TextBox x:Name="ContentTextBox" Grid.Row="1"
+          AcceptsReturn="True" TextWrapping="Wrap"
+          VerticalScrollBarVisibility="Auto" />
+    </Grid>
   </DockPanel>
 
 </Window>
