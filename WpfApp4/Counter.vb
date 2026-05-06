@@ -20,13 +20,17 @@ Public Class Counter
         End Set
     End Property
 
-    Public Function IncrementCommand() As ICommand
-        Return  Me.m_incrementCommand
-    End Function
+    Public ReadOnly Property IncrementCommand() As ICommand
+        Get
+            Return  Me.m_incrementCommand
+        End Get
+    End Property
 
-    Public Function DecrementCommand() As ICommand
-        Return  Me.m_decrementCommand
-    End Function
+    Public ReadOnly Property DecrementCommand() As ICommand
+        Get
+            Return  Me.m_decrementCommand
+        End Get
+    End Property
 
     Private ReadOnly m_incrementCommand As SimpleCommand
     Private ReadOnly m_decrementCommand As SimpleCommand
