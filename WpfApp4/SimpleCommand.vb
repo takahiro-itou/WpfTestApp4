@@ -16,7 +16,7 @@ Public Class SimpleCommand
 
     Public Function CanExecute(parameter As Object) As Boolean _
             Implements ICommand.CanExecute
-        Return If(m_canExecute Is Nothing, True, m_canExecute(parameter))
+        Return If(m_canExecute Is Nothing, True, m_canExecute.Invoke(parameter))
     End Function
 
     Public Sub Execute(parameter As Object) Implements ICommand.Execute

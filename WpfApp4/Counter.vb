@@ -33,15 +33,15 @@ Public Class Counter
 
     Public Sub New()
         Me.m_incrementCommand = New SimpleCommand(
-            Sub()
+            Sub(ByVal parameter As Object)
                 Count = Count + 1
             End Sub
         )
         Me.m_decrementCommand = New SimpleCommand(
-            Sub()
+            Sub(ByVal parameter As Object)
                 Count = Count - 1
             End Sub,
-            Function() As Boolean
+            Function(ByVal parameter As Object) As Boolean
                 Return  (Count > 0)
             End Function
         )
@@ -55,6 +55,9 @@ Public Class Counter
         RaiseEvent PropertyChanged(
                 Me, New PropertyChangedEventArgs(propertyName)
         )
+        If (propertyName = nameof(Count)) Then
+            Me.m_decrementCommand.RaiseCanExecuteChanged()
+        End If
     End Sub
 
 End Class
