@@ -7,8 +7,34 @@
         xmlns:local="clr-namespace:WpfApp4"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="HelloWorldButton" Content="押してね"
-            Click="HelloWorldButton_Click" />
+  <DockPanel>
+    <!--  上部: タイトルエリア -->
+    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="10">
+      <Label Content="タイトル:" VerticalAlignment="Center" />
+      <TextBox x:Name="TitleTextBox" Width="200" Margin="5,0" />
+    </StackPanel>
+
+    <!--  下部: ボタンエリア -->
+    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
+        HorizontalAlignment="Right" Margin="10">
+      <Button Content="保存" Width="80" Margin="5"
+          Click="OnSaveButtonClick" />
+      <Button Content="クリア" Width="80" Margin="5"
+          Click="OnClearButtonClick" />
+    </StackPanel>
+
+    <!--  中央: メモエリア -->
+    <Grid Margin="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <Label Grid.Row="0" Content="メモ内容:" />
+      <TextBox x:Name="ContentTextBox" Grid.Row="1"
+          AcceptsReturn="True" TextWrapping="Wrap"
+          VerticalScrollBarVisibility="Auto" />
     </Grid>
+  </DockPanel>
+
 </Window>
