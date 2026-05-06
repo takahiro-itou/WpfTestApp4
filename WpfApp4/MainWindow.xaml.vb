@@ -6,7 +6,7 @@ Class MainWindow
 
 Public Sub New()
     InitializeComponent()
-    Me.DataContext = New Counter()
+    Me.DataContext = New CounterViewModel()
 End Sub
 
 End Class
