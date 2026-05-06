@@ -13,12 +13,14 @@ Public Class Company
     Public Property Department As String
 End Class
 
+Private m_person As Person
+
 Public Sub New()
     InitializeComponent()
 
     ' データオブジェクトを作成
-    Dim vPerson As New Person
-    With vPerson
+    Me.m_person = New Person
+    With Me.m_person
         .Name = "田中太郎"
         .Age = 30
         .Job = "ソフトウェアエンジニア"
@@ -30,12 +32,16 @@ Public Sub New()
         .Department = "開発部"
     End With
 
-    Me.DataContext = vPerson
+    Me.DataContext = Me.m_person
     Me.CompanyGroup.DataContext = vCompany
 End Sub
 
-Private Sub OnAddButtonClick(sender As Object, e As RoutedEventArgs)
+Private Sub OnDecrementAge(sender As Object, e As RoutedEventArgs)
+    Me.m_person.Age = Me.m_person.Age - 1
+End Sub
 
+Private Sub OnIncrementAge(sender As Object, e As RoutedEventArgs)
+    Me.m_person.Age = Me.m_person.Age + 1
 End Sub
 
 End Class
