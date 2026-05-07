@@ -3,8 +3,6 @@ Imports System.Windows.Controls
 
 Imports WpfApp4.ViewModels
 
-Namespace WpfApp4.Views
-
 Public Partial Class CounterView
 
     Public Sub New()
@@ -16,5 +14,3 @@ Public Partial Class CounterView
     End Sub
 
 End Class
-
-End Namespace
