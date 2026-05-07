@@ -8,11 +8,14 @@ Public Class CounterViewModel
         Implements INotifyPropertyChanged
 
     Private ReadOnly m_model As CounterModel
+    Private ReadOnly m_storage As JsonCounterStorage
     Private ReadOnly m_incrementCommand As SimpleCommand
     Private ReadOnly m_decrementCommand As SimpleCommand
 
     Public Sub New()
-        Me.m_model = new CounterModel()
+        Me.m_storage = new JsonCounterStorage()
+        Dim initialValue As Integer = Me.m_storage.Load()
+        Me.m_model = new CounterModel(initialValue)
 
         Me.m_incrementCommand = New SimpleCommand(
             Sub(ByVal parameter As Object)
@@ -50,11 +53,13 @@ Public Class CounterViewModel
     Private Sub ExecuteIncrement()
         Me.m_model.Increment()
         OnPropertyChanged(nameof(Count))
+        Me.m_storage.Save(Me.m_model.Value)
     End Sub
 
     Private Sub ExecuteDecrement()
         Me.m_model.Decrement()
         OnPropertyChanged(nameof(Count))
+        Me.m_storage.Save(Me.m_model.Value)
     End Sub
 
     Public Event PropertyChanged As PropertyChangedEventHandler _
