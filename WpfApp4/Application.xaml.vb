@@ -22,6 +22,8 @@ Protected Overrides Sub OnStartup(e As StartupEventArgs)
     Dim evenOddViewModel As New EvenOddViewModel(model)
 
     Dim mainWindow As New MainWindow()
+    mainWindow.CounterView.SetViewModel(counterViewModel)
+    mainWindow.EvenOddView.SetViewModel(evenOddViewModel)
 
     ' ウィンドウを表示
     mainWindow.Show()
