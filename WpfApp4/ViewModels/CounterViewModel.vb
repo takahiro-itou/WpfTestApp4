@@ -4,6 +4,8 @@ Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
 Imports System.Windows.Input
 
+Imports WpfApp4.Services
+
 Public Class CounterViewModel
         Implements INotifyPropertyChanged
 
