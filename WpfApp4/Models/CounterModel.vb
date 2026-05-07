@@ -11,7 +11,7 @@ Public Class CounterModel
     End Sub
 
     Private Sub Notify()
-        ValueChanged.Invoke()
+        RaiseEvent  ValueChanged()
     End Sub
 
     Public Property Value() As Integer
