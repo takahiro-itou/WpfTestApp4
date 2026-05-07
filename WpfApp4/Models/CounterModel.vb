@@ -1,4 +1,6 @@
 
+Namespace Models
+
 Public Class CounterModel
 
     Private m_value As Integer
@@ -31,3 +33,5 @@ Public Class CounterModel
     End Sub
 
 End Class
+
+End Namespace

@@ -1,6 +1,7 @@
 ﻿
-Imports System.ComponentModel
-Imports System.Runtime.CompilerServices
+Imports System.Windows
+
+Imports WpfApp4.ViewModels
 
 Class MainWindow
 
