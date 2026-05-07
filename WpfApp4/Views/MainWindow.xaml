@@ -5,10 +5,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp4"
+        xmlns:views="clr-namespace:WpfApp4.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
   <StackPanel Margin="20" VerticalAlignment="Center">
-    <local:CounterView x:Name="CounterView" Margin="0,0,0,20" />
+    <views:CounterView x:Name="CounterView" Margin="0,0,0,20" />
     <Separator Margin="20,0" Background="LightGray" Height="1" />
     <local:EvenOddView x:Name="EvenOddView" Margin="0,20,0,0" />
   </StackPanel>
