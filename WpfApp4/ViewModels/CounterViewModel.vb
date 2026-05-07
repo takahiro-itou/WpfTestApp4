@@ -17,7 +17,7 @@ Public Class CounterViewModel
     Private ReadOnly m_decrementCommand As SimpleCommand
 
     Public Sub New(
-            ByVal model As CounerModel, ByVal storage As JsonCounterStorage)
+            ByVal model As CounterModel, ByVal storage As JsonCounterStorage)
 
         Me.m_model = model
         Me.m_storage = storage
