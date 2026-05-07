@@ -3,6 +3,10 @@ Public Class CounterModel
 
     Private m_value As Integer
 
+    Public Sub New(Optional ByVal initialValue = 0)
+        m_value = initialValue
+    End Sub
+
     Public Property Value() As Integer
         Get
             Return  Me.m_value
