@@ -16,10 +16,16 @@ Public Class CounterViewModel
     Private ReadOnly m_incrementCommand As SimpleCommand
     Private ReadOnly m_decrementCommand As SimpleCommand
 
-    Public Sub New()
-        Me.m_storage = new JsonCounterStorage()
+    Public Sub New(
+            ByVal model As CounerModel, ByVal storage As JsonCounterStorage)
+
+        Me.m_model = model
+        Me.m_storage = storage
+
         Dim initialValue As Integer = Me.m_storage.Load()
-        Me.m_model = new CounterModel(initialValue)
+        Me.m_model.SetValue(initialValue)
+
+        AddHandler Me.m_model.ValueChanged, AddressOf OnCountChanged
 
         Me.m_incrementCommand = New SimpleCommand(
             Sub(ByVal parameter As Object)
@@ -56,14 +62,16 @@ Public Class CounterViewModel
 
     Private Sub ExecuteIncrement()
         Me.m_model.Increment()
-        OnPropertyChanged(nameof(Count))
         Me.m_storage.Save(Me.m_model.Value)
     End Sub
 
     Private Sub ExecuteDecrement()
         Me.m_model.Decrement()
-        OnPropertyChanged(nameof(Count))
         Me.m_storage.Save(Me.m_model.Value)
+    End Sub
+
+    Private Sub OnCountChanged()
+        OnPropertyChanged(nameof(Count))
     End Sub
 
     Public Event PropertyChanged As PropertyChangedEventHandler _
