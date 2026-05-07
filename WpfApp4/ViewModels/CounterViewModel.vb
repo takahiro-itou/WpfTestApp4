@@ -3,6 +3,7 @@ Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
 Imports System.Windows.Input
 
+Imports WpfApp4.Models
 Imports WpfApp4.Services
 
 Namespace ViewModels
