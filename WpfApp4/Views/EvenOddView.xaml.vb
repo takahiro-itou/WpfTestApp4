@@ -3,6 +3,8 @@ Imports System.Windows.Controls
 
 Imports WpfApp4.ViewModels
 
+Namespace Views
+
 Public Partial Class EvenOddView
 
     Public Sub New()
@@ -14,3 +16,5 @@ Public Partial Class EvenOddView
     End Sub
 
 End Class
+
+End Namespace
