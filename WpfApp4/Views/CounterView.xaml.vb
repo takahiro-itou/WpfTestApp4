@@ -1,11 +1,11 @@
 ﻿
-Imports System.Windows.Control
+Imports System.Windows.Controls
 
 Imports WpfApp4.ViewModels
 
 Namespace WpfApp4.Views
 
-Public Class CounterView
+Public Partial Class CounterView
 
     Public Sub New()
         InitializeComponent()

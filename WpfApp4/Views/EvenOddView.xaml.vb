@@ -5,7 +5,7 @@ Imports WpfApp4.ViewModels
 
 Namespace WpfApp4.Views
 
-Public Class EvenOddView
+Public Partial Class EvenOddView
 
     Public Sub New()
         InitializeComponent()
