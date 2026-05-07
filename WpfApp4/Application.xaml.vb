@@ -4,6 +4,7 @@ Imports System.Windows
 Imports WpfApp4.Models
 Imports WpfApp4.Services
 Imports WpfApp4.ViewModels
+Imports WpfApp4.Views
 
 Class Application
 
